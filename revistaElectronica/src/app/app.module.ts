@@ -7,7 +7,8 @@ import { ArticulosComponent } from './Components/articulos/articulos.component';
 import { AutoresComponent } from './Components/autores/autores.component';
 import { InformacionComponent } from './Components/informacion/informacion.component';
 import { LoginComponent } from './Components/login/login.component';
-
+import { InicioComponent } from './Components/inicio/inicio.component';
+import{appRouting} from "./app.routes";
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,10 +16,12 @@ import { LoginComponent } from './Components/login/login.component';
     ArticulosComponent,
     AutoresComponent,
     InformacionComponent,
-    LoginComponent
+    LoginComponent,
+    InicioComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    appRouting
   ],
   providers: [],
   bootstrap: [AppComponent]
