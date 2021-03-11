@@ -1,14 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser'
+import { NgModule } from '@angular/core'
 
-import { AppComponent } from './app.component';
-import { MenuNavegacionComponent } from './Components/menu-navegacion/menu-navegacion.component';
-import { ArticulosComponent } from './Components/articulos/articulos.component';
-import { AutoresComponent } from './Components/autores/autores.component';
-import { InformacionComponent } from './Components/informacion/informacion.component';
-import { LoginComponent } from './Components/login/login.component';
-import { InicioComponent } from './Components/inicio/inicio.component';
-import{appRouting} from "./app.routes";
+import { AppComponent } from './app.component'
+import { MenuNavegacionComponent } from './Components/menu-navegacion/menu-navegacion.component'
+import { ArticulosComponent } from './Components/articulos/articulos.component'
+import { AutoresComponent } from './Components/autores/autores.component'
+import { InformacionComponent } from './Components/informacion/informacion.component'
+import { LoginComponent } from './Components/login/login.component'
+import { InicioComponent } from './Components/inicio/inicio.component'
+import { appRouting } from './app.routes'
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,13 +17,10 @@ import{appRouting} from "./app.routes";
     AutoresComponent,
     InformacionComponent,
     LoginComponent,
-    InicioComponent
+    InicioComponent,
   ],
-  imports: [
-    BrowserModule,
-    appRouting
-  ],
+  imports: [BrowserModule, appRouting],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
