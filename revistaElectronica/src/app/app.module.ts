@@ -9,6 +9,7 @@ import { InformacionComponent } from './Components/informacion/informacion.compo
 import { LoginComponent } from './Components/login/login.component';
 import { InicioComponent } from './Components/inicio/inicio.component';
 import{appRouting} from "./app.routes";
+import { PieDePaginaComponent } from './Components/pie-de-pagina/pie-de-pagina.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import{appRouting} from "./app.routes";
     AutoresComponent,
     InformacionComponent,
     LoginComponent,
-    InicioComponent
+    InicioComponent,
+    PieDePaginaComponent
   ],
   imports: [
     BrowserModule,
