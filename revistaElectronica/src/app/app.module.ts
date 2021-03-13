@@ -1,6 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { BrowserModule } from '@angular/platform-browser'
+import { NgModule } from '@angular/core'
 import { AppComponent } from './app.component';
 import { MenuNavegacionComponent } from './Components/menu-navegacion/menu-navegacion.component';
 import { ArticulosComponent } from './Components/articulos/articulos.component';
@@ -26,6 +25,6 @@ import { PieDePaginaComponent } from './Components/pie-de-pagina/pie-de-pagina.c
     appRouting
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
