@@ -6,3 +6,7 @@
 .navbar-expand-lg {
   background-color: cadetblue;
 }
+.align
+{
+  align-items: flex-end;
+}
