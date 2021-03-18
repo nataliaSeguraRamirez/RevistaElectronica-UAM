@@ -9,6 +9,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { InicioComponent } from './Components/inicio/inicio.component';
 import{appRouting} from "./app.routes";
 import { PieDePaginaComponent } from './Components/pie-de-pagina/pie-de-pagina.component';
+import { HeaderComponent } from './Components/header/header.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { PieDePaginaComponent } from './Components/pie-de-pagina/pie-de-pagina.c
     InformacionComponent,
     LoginComponent,
     InicioComponent,
-    PieDePaginaComponent
+    PieDePaginaComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
