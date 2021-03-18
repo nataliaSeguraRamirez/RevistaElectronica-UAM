@@ -9,7 +9,8 @@ import { InformacionComponent } from './Components/informacion/informacion.compo
 import { LoginComponent } from './Components/login/login.component'
 import { InicioComponent } from './Components/inicio/inicio.component'
 import { appRouting } from './app.routes';
-import { HeaderComponent } from './Components/header/header.component'
+import { HeaderComponent } from './Components/header/header.component';
+import { SearchBarComponent } from './Components/search-bar/search-bar.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { HeaderComponent } from './Components/header/header.component'
     LoginComponent,
     InicioComponent,
     HeaderComponent,
+    SearchBarComponent,
   ],
   imports: [BrowserModule, appRouting],
   providers: [],
