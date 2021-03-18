@@ -1,3 +1,11 @@
+.nav-item {
+  padding-left: 100px;
+  padding-right: 100px;
+  font-weight: bold;
+}
+.navbar-expand-lg {
+  background-color: cadetblue;
+}
 .align
 {
   align-items: flex-end;
