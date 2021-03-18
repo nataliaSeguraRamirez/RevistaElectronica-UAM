@@ -8,7 +8,8 @@ import { AutoresComponent } from './Components/autores/autores.component'
 import { InformacionComponent } from './Components/informacion/informacion.component'
 import { LoginComponent } from './Components/login/login.component'
 import { InicioComponent } from './Components/inicio/inicio.component'
-import { appRouting } from './app.routes'
+import { appRouting } from './app.routes';
+import { HeaderComponent } from './Components/header/header.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { appRouting } from './app.routes'
     InformacionComponent,
     LoginComponent,
     InicioComponent,
+    HeaderComponent,
   ],
   imports: [BrowserModule, appRouting],
   providers: [],
