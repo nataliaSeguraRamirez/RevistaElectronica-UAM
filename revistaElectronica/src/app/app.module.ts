@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
+
 import { AppComponent } from './app.component'
 import { MenuNavegacionComponent } from './Components/menu-navegacion/menu-navegacion.component'
 import { ArticulosComponent } from './Components/articulos/articulos.component'
@@ -12,6 +13,7 @@ import { HeaderComponent } from './Components/header/header.component'
 import { SearchBarComponent } from './Components/search-bar/search-bar.component'
 import { RegistroComponent } from './Components/registro/registro.component'
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,11 +23,15 @@ import { RegistroComponent } from './Components/registro/registro.component'
     InformacionComponent,
     LoginComponent,
     InicioComponent,
+    PieDePaginaComponent,
     HeaderComponent,
     SearchBarComponent,
     RegistroComponent
   ],
-  imports: [BrowserModule, appRouting],
+  imports: [
+    BrowserModule,
+    appRouting
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
