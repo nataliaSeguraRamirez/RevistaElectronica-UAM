@@ -1,3 +1,37 @@
 <div class="container">
-  <p>login works!</p>
+  <img class="imagen" src="../../../assets/img/backgroundLogIn.png" alt="" />
+  <div class="content">
+    <p>
+      ¿Eres un autor nuevo?
+      <a routerLink="/registro" routerLinkActive="active">registrate</a>
+    </p>
+    <form>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">
+          Correo electrónico
+        </label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+        <div id="emailHelp" class="form-text">
+          Ejemplo: minombre123@gmail.com
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="margin-left: 150px;">
+        Ingresar
+      </button>
+    </form>
+  </div>
 </div>
