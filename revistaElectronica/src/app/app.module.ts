@@ -10,7 +10,8 @@ import { LoginComponent } from './Components/login/login.component'
 import { InicioComponent } from './Components/inicio/inicio.component'
 import { appRouting } from './app.routes';
 import { HeaderComponent } from './Components/header/header.component';
-import { SearchBarComponent } from './Components/search-bar/search-bar.component'
+import { SearchBarComponent } from './Components/search-bar/search-bar.component';
+import { RegistroComponent } from './Components/registro/registro.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { SearchBarComponent } from './Components/search-bar/search-bar.component
     InicioComponent,
     HeaderComponent,
     SearchBarComponent,
+    RegistroComponent,
   ],
   imports: [BrowserModule, appRouting],
   providers: [],
