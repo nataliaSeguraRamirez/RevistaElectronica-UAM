@@ -1,0 +1,29 @@
+form {
+  margin: 50px auto;
+  width: 400px;
+}
+p {
+  margin: 20px auto 0px;
+  font-family: Goudy Old Style;
+  font-size: 20px;
+  margin-left: 15px;
+}
+label {
+  font-weight: bold;
+}
+
+.content {
+  position: relative;
+}
+.container {
+  overflow: hidden;
+  position: relative;
+}
+.imagen {
+  opacity: 0.6;
+  position: fixed;
+  margin-left: 0;
+  margin-top: 0;
+  width: 1100px;
+  height: 500px;
+}
