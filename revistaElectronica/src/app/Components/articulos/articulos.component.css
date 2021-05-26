@@ -1,3 +1,7 @@
+.container {
+  overflow: hidden;
+  position: relative;
+}
 .align
 {
   align-items: flex-end;
