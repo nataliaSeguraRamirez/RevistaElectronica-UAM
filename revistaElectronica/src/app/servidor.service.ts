@@ -18,8 +18,26 @@ export class ServidorService {
         correo: correoU,
         clave: claveU,
       })
-      .subscribe((data) => {
-        alert('me enviaron: ' + data)
+      .subscribe((data: any) => {
+        const usuario = JSON.parse(data)
+        console.log('me enviaron: ' + usuario)
+        if (data != null) {
+          if (usuario.rol_id == 1) {
+            localStorage.setItem('loginEditor', 'true')
+            alert('Editor autenticado!')
+            return true
+          }
+          if (usuario.rol_id == 2) {
+            localStorage.setItem('loginAutor', 'true')
+            alert('Autor autenticado!')
+            return true
+          }
+        } else {
+          alert('Datos incorrectos')
+          localStorage.setItem('login', 'False')
+          return false
+        }
+        return false
       })
   }
 }
