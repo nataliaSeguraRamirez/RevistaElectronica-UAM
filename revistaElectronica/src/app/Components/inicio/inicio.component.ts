@@ -25,13 +25,8 @@ export class InicioComponent implements OnInit {
   }
 
   public obtenerArticulos() {
-    this.servidor.obtenerArticulos().subscribe((data) => {
-      const articulos_todos = data as articulos[]
-      for (let index = 0; index < articulos_todos.length; index++) {
-        if (articulos_todos[index].es_publicado == 1) {
-          this.articulos1.push(articulos_todos[index])
-        }
-      }
+    this.servidor.obtenerArticulosPublicados().subscribe((data) => {
+      this.articulos1 = data as articulos[]
     })
   }
 }

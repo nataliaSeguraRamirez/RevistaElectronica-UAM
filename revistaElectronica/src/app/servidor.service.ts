@@ -46,13 +46,15 @@ export class ServidorService {
       })
   }
 
-  public obtenerArticulos() {
-    console.log('Solicitar articulos')
-    return this.conexion.get<articulos[]>(this.direccion + '/obtenerArticulos')
+  public obtenerArticulosPublicados() {
+    /*console.log('Solicitar articulos')*/
+    return this.conexion.get<articulos[]>(
+      this.direccion + '/obtenerArticulosPublicados',
+    )
   }
 
   public obtenerAutores() {
     console.log('Solicitar autores')
-    return this.conexion.get<usuarios[]>(this.direccion + 'obtenerAutores')
+    return this.conexion.get<usuarios[]>(this.direccion + '/obtenerAutores')
   }
 }
