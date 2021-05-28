@@ -1,17 +1,20 @@
 <div class="container">
   <app-search-bar></app-search-bar>
-
   <div
     *ngFor="let articulo of articulos1"
     class="card border-primary mb-3"
-    style="max-width: 20rem;"
+    style="max-width: 60%;"
   >
-    <div class="card-header">articulo.autor</div>
     <div class="card-body">
-      <h4 class="card-title">Primary card title</h4>
+      <div class="card-header mb-3">Autor: {{ articulo.autor_ced }}</div>
+      <!--<div *ngFor="let autor of autores" class="card-header">
+        <template [ngIf]="{{autor.cedula}} == '{{articulo.autor_ced}}'">
+          {{ autor.nombre }} {{ autor.apellido }}
+        </template>
+      </div>-->
+      <h4 class="card-title">{{ articulo.titulo }}</h4>
       <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
+        {{ articulo.descripcion }}
       </p>
     </div>
   </div>
