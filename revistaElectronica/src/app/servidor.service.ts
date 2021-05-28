@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { usuarios } from './Modelos/usuarios'
+import { ModuleEditorModule } from './Components/module-editor/module-editor.module'
 import { articulos } from './Modelos/articulos'
 import { roles } from './Modelos/roles'
 
@@ -18,10 +19,11 @@ export class ServidorService {
         correo: correoU,
         clave: claveU,
       })
-      .subscribe((data: any) => {
-        const usuario = JSON.parse(data)
-        console.log('me enviaron: ' + usuario)
-        if (data != null) {
+      .subscribe((data:any) => {
+        const usuario = (data [0]) as usuarios;
+        console.log(data)
+        if (data.length != 0) {
+          alert('me enviaron: ' + usuario.nombre)
           if (usuario.rol_id == 1) {
             localStorage.setItem('loginEditor', 'true')
             alert('Editor autenticado!')

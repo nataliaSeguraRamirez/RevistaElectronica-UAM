@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
-
 import { AppComponent } from './app.component'
 import { MenuNavegacionComponent } from './Components/menu-navegacion/menu-navegacion.component'
 import { ArticulosComponent } from './Components/articulos/articulos.component'
@@ -15,6 +14,8 @@ import { RegistroComponent } from './Components/registro/registro.component'
 import { PieDePaginaComponent } from './Components/pie-de-pagina/pie-de-pagina.component'
 import { ServidorService } from './servidor.service'
 import { HttpClientModule } from '@angular/common/http'
+import { ModuleEditorModule } from './Components/module-editor/module-editor.module'
+import { ModuleAutorModule } from './Components/module-autor/module-autor.module'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,11 @@ import { HttpClientModule } from '@angular/common/http'
     SearchBarComponent,
     RegistroComponent,
   ],
-  imports: [BrowserModule, appRouting, HttpClientModule],
+  imports: [BrowserModule,
+            appRouting,
+            HttpClientModule,
+            ModuleAutorModule,
+          ],
   providers: [ServidorService],
   bootstrap: [AppComponent],
 })

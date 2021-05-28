@@ -9,7 +9,7 @@ db.usuarios.insert({
     nombre: 'Editor',
     apellido: 'Administrador',
     correo: 'editoradmin@gmail.com',
-    clve: 'admin',
+    clave: 'admin',
     rol_id: NumberInt(1)
 });
 
