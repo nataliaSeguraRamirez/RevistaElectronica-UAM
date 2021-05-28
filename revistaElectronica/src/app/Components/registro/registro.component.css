@@ -1,0 +1,45 @@
+form {
+  margin: 50px auto;
+  width: 400px;
+}
+p {
+  margin: 20px auto 0px;
+  font-family: Goudy Old Style;
+  font-size: 20px;
+  margin-left: 15px;
+}
+label {
+  font-weight: bold;
+}
+
+.content {
+  position: relative;
+}
+.container {
+  overflow: hidden;
+  position: relative;
+  height: 500px;
+  margin-bottom: 10px;
+}
+.imagen {
+  opacity: 0.6;
+  position: absolute;
+  margin-left: 0;
+  margin-top: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+h1 {
+  margin-top: 24px;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  margin: 15px;
+}
+.button{
+  text-align: center;
+}
