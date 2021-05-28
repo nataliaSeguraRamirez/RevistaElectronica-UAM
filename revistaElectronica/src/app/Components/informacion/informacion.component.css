@@ -4,3 +4,8 @@ h1 {
 p {
   margin: 10px auto 18px;
 }
+.container {
+  overflow: hidden;
+  position: relative;
+  height: 500px;
+}
