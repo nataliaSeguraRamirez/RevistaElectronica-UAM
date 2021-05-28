@@ -6,7 +6,7 @@ const usuariosSchema = new Schema({
   nombre: String,
   apellido: String,
   correo: String,
-  contraseña: String,
-  rol_id: Number
+  clave: String,
+  rol_id: Number,
 })
 module.exports = mongoose.model('usuarios', usuariosSchema) // para guardar en la coleccion

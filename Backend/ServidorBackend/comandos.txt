@@ -2,23 +2,23 @@
 
 use revistaUAM_bd
 
-------- Crear e insertar a la colección: ----
+------- Crear e insertar a las colecciones: ----
 
 db.usuarios.insert({
     cedula: '3456789',
     nombre: 'Editor',
     apellido: 'Administrador',
     correo: 'editoradmin@gmail.com',
-    contraseña: 'admin',
+    clve: 'admin',
     rol_id: NumberInt(1)
 });
 
 db.usuarios.insert({
     cedula: '8735358',
-    nombre: 'Editor',
-    apellido: 'Administrador',
-    correo: 'editoradmin@gmail.com',
-    contraseña: 'admin',
+    nombre: 'Autor',
+    apellido: 'Prueba',
+    correo: 'autorprueba@gmail.com',
+    clave: 'autorclave',
     rol_id: NumberInt(2)
 });
 
@@ -40,3 +40,14 @@ db.roles.insert({
     id: NumberInt(2),
     nombre: 'Autor'
 });
+
+
+-----  Pasos Servidor Node --
+Ejecutar en la carpeta raiz ServidorBackend:
+
+cmd> npm install mongoose
+cmd> npm install express
+
+cmd> node .\Servidorprueba.js
+
+    db.usuarios.find({$and: [{correo: 'autorprueba@gmail.com' }, { clave: 'autorclave' }]}).pretty();
