@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { usuarios } from './Modelos/usuarios'
-import { ModuleEditorModule } from './Components/module-editor/module-editor.module'
 import { articulos } from './Modelos/articulos'
 import { roles } from './Modelos/roles'
 
@@ -26,8 +25,7 @@ export class ServidorService {
           /*alert('me enviaron: ' + usuario.nombre)*/
           localStorage.setItem('user_cedula', JSON.stringify(usuario.cedula))
           if (usuario.rol_id == 1) {
-            localStorage.setItem('loginEditor', 'true')
-            alert('Editor autenticado!')
+            localStorage.setItem('loginEditor', 'true');
             return true
           }
           if (usuario.rol_id == 2) {
@@ -43,6 +41,7 @@ export class ServidorService {
         }
         return false
       })
+      return false
   }
 
   public obtenerArticulos() {
@@ -59,6 +58,7 @@ export class ServidorService {
     const autores1 = this.conexion.get<usuarios[]>(
       this.direccion + 'obtenerAutores',
     )
+    console.log("->")
     console.log(autores1)
     return autores1
   }
