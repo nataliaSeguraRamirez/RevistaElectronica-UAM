@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { usuarios } from './Modelos/usuarios'
-import { articulos } from './Modelos/articulos'
-import { roles } from './Modelos/roles'
+import { usuarios } from './Modelos/usuarios.interface'
+import { ModuleEditorModule } from './Components/module-editor/module-editor.module'
+import { articulos } from './Modelos/articulos.interface'
+import { roles } from './Modelos/roles.interface'
+import { Observable } from 'rxjs'
 
 @Injectable({
   providedIn: 'root',
@@ -44,22 +46,15 @@ export class ServidorService {
       return false
   }
 
-  public obtenerArticulos() {
-    console.log('Solicitar articulos')
-    const articulos1 = this.conexion.get<articulos[]>(
-      this.direccion + '/obtenerArticulos',
+  public obtenerArticulosPublicados() {
+    /*console.log('Solicitar articulos')*/
+    return this.conexion.get<articulos[]>(
+      this.direccion + '/obtenerArticulosPublicados',
     )
-    console.log(articulos1)
-    return articulos1
   }
 
   public obtenerAutores() {
     console.log('Solicitar autores')
-    const autores1 = this.conexion.get<usuarios[]>(
-      this.direccion + 'obtenerAutores',
-    )
-    console.log("->")
-    console.log(autores1)
-    return autores1
+    return this.conexion.get<usuarios[]>(this.direccion + '/obtenerAutores')
   }
 }
