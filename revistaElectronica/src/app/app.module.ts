@@ -12,6 +12,7 @@ import { appRouting } from './app.routes'
 import { HeaderComponent } from './Components/header/header.component'
 import { SearchBarComponent } from './Components/search-bar/search-bar.component'
 import { RegistroComponent } from './Components/registro/registro.component'
+import { PieDePaginaComponent } from './Components/pie-de-pagina/pie-de-pagina.component'
 
 @NgModule({
   declarations: [
