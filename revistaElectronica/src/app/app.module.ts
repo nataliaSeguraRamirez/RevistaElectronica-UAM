@@ -35,6 +35,7 @@ import { ModuleAutorModule } from './Components/module-autor/module-autor.module
             appRouting,
             HttpClientModule,
             ModuleAutorModule,
+            ModuleEditorModule,
           ],
   providers: [ServidorService],
   bootstrap: [AppComponent],

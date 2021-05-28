@@ -5,7 +5,6 @@ import { PanelEditorComponent} from './panel-editor/panel-editor.component'
 const routes: Routes = [
   {path: 'articulo/:id', component: ArticuloEditorComponent},
   {path: 'panel', component: PanelEditorComponent},
-  {path: '**', pathMatch:'full', redirectTo: 'panel' }
 ];
 
 export const appRouting = RouterModule.forRoot(routes)
