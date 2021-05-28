@@ -14,7 +14,6 @@ import { SearchBarComponent } from './Components/search-bar/search-bar.component
 import { RegistroComponent } from './Components/registro/registro.component'
 import { PieDePaginaComponent } from './Components/pie-de-pagina/pie-de-pagina.component'
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,12 +26,9 @@ import { PieDePaginaComponent } from './Components/pie-de-pagina/pie-de-pagina.c
     PieDePaginaComponent,
     HeaderComponent,
     SearchBarComponent,
-    RegistroComponent
+    RegistroComponent,
   ],
-  imports: [
-    BrowserModule,
-    appRouting
-  ],
+  imports: [BrowserModule, appRouting],
   providers: [],
   bootstrap: [AppComponent],
 })
