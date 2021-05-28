@@ -12,15 +12,22 @@ App.post('/logIn', async (req, res, next) => {
   res.json(usuario)
 })
 
+App.get('/obtenerArticulosTotal', async (req, res, next) => {
+  const articulos1 = await articulos.find()
+  res.json(articulos1)
+})
+
+App.get('/obtenerArticulosAutor/:cedula', async (req, res, next) => {
+  const articulos1 = await articulos.find({ autor_ced: req.params.cedula })
+  res.json(articulos1)
+})
+
 App.get('/obtenerArticulosPublicados', async (req, res, next) => {
   const articulos1 = await articulos.find({ es_publicado: 1 })
-  /*console.log(' Obtener articulos')
-  console.log(articulos1)*/
   res.json(articulos1)
 })
 
 App.get('/obtenerAutores', async (req, res, next) => {
   const autores1 = await usuarios.find({ rol_id: 2 })
-  /*console.log(autores1)*/
   res.json(autores1)
 })

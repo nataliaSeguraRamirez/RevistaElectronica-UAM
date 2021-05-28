@@ -26,6 +26,7 @@ export class InicioComponent implements OnInit {
 
   public obtenerArticulos() {
     this.servidor.obtenerArticulosPublicados().subscribe((data) => {
+      console.log(data)
       this.articulos1 = data as articulos[]
     })
   }

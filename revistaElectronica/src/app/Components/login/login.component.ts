@@ -11,7 +11,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
   public login(correo: any, clave: any) {
-    
     this.servidor.validarIngreso(correo.value, clave.value)
   }
 }
