@@ -13,6 +13,8 @@ import { HeaderComponent } from './Components/header/header.component'
 import { SearchBarComponent } from './Components/search-bar/search-bar.component'
 import { RegistroComponent } from './Components/registro/registro.component'
 import { PieDePaginaComponent } from './Components/pie-de-pagina/pie-de-pagina.component'
+import { ServidorService } from './servidor.service'
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -28,8 +30,8 @@ import { PieDePaginaComponent } from './Components/pie-de-pagina/pie-de-pagina.c
     SearchBarComponent,
     RegistroComponent,
   ],
-  imports: [BrowserModule, appRouting],
-  providers: [],
+  imports: [BrowserModule, appRouting, HttpClientModule],
+  providers: [ServidorService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

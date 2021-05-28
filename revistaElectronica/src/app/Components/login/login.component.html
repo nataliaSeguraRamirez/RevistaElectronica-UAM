@@ -5,12 +5,16 @@
       ¿Eres un autor nuevo?
       <a routerLink="/registro" routerLinkActive="active">registrate</a>
     </p>
-    <form>
+    <div
+      class="form-group"
+      style="margin-top: 50px; margin-left: 250px; width: 50%;"
+    >
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">
           Correo electrónico
         </label>
         <input
+          #correo
           type="email"
           class="form-control"
           id="exampleInputEmail1"
@@ -23,15 +27,21 @@
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Contraseña</label>
         <input
+          #clave
           type="password"
           class="form-control"
           id="exampleInputPassword1"
         />
       </div>
 
-      <button type="submit" class="btn btn-primary" style="margin-left: 150px;">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        style="margin-left: 180px;"
+        (click)="login(correo, clave)"
+      >
         Ingresar
       </button>
-    </form>
+    </div>
   </div>
 </div>
