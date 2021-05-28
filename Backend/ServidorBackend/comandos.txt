@@ -49,5 +49,3 @@ cmd> npm install mongoose
 cmd> npm install express
 
 cmd> node .\Servidorprueba.js
-
-    db.usuarios.find({$and: [{correo: 'autorprueba@gmail.com' }, { clave: 'autorclave' }]}).pretty();

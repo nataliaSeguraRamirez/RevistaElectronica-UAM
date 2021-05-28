@@ -15,15 +15,16 @@ export class ServidorService {
   public validarIngreso(correoU: any, claveU: any) {
     alert('datos guardados: ' + correoU + ' , ' + claveU)
     this.conexion
-      .post('http://127.0.0.1:1337/logIn', {
+      .post(this.direccion + '/logIn', {
         correo: correoU,
         clave: claveU,
       })
-      .subscribe((data:any) => {
-        const usuario = (data [0]) as usuarios;
+      .subscribe((data: any) => {
+        const usuario = data[0] as usuarios
         console.log(data)
         if (data.length != 0) {
-          alert('me enviaron: ' + usuario.nombre)
+          /*alert('me enviaron: ' + usuario.nombre)*/
+          localStorage.setItem('user_cedula', JSON.stringify(usuario.cedula))
           if (usuario.rol_id == 1) {
             localStorage.setItem('loginEditor', 'true')
             alert('Editor autenticado!')
@@ -35,11 +36,30 @@ export class ServidorService {
             return true
           }
         } else {
-          alert('Datos incorrectos')
-          localStorage.setItem('login', 'False')
+          /*alert('Datos incorrectos')*/
+          localStorage.setItem('loginAutor', 'False')
+          localStorage.setItem('loginEditor', 'False')
           return false
         }
         return false
       })
+  }
+
+  public obtenerArticulos() {
+    console.log('Solicitar articulos')
+    const articulos1 = this.conexion.get<articulos[]>(
+      this.direccion + '/obtenerArticulos',
+    )
+    console.log(articulos1)
+    return articulos1
+  }
+
+  public obtenerAutores() {
+    console.log('Solicitar autores')
+    const autores1 = this.conexion.get<usuarios[]>(
+      this.direccion + 'obtenerAutores',
+    )
+    console.log(autores1)
+    return autores1
   }
 }

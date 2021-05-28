@@ -1,4 +1,18 @@
 <div class="container">
   <app-search-bar></app-search-bar>
-  <p>inicio works!</p>
+
+  <div
+    *ngFor="let articulo of articulos1"
+    class="card border-primary mb-3"
+    style="max-width: 20rem;"
+  >
+    <div class="card-header">articulo.autor</div>
+    <div class="card-body">
+      <h4 class="card-title">Primary card title</h4>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
+    </div>
+  </div>
 </div>
