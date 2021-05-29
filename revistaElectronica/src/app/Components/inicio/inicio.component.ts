@@ -33,6 +33,6 @@ export class InicioComponent implements OnInit {
   }
   verArticulo(index:number){
     console.log(index)
-    this.router.navigate(['articulos', index]);
+    this.router.navigate([{outlets:{lector:['articulos', index]}}]);
   }
 }
