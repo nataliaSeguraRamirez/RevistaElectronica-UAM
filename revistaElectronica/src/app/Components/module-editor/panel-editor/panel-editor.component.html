@@ -30,10 +30,6 @@
     </div>
   </div>
 </nav>
-<<<<<<< HEAD
-=======
-
->>>>>>> 185e0cb6f294c1e5ffc5efc707502632088498eb
 <div class="container mb-3" style="margin-top: 10px;">
   <div class="form-group">
     <fieldset>
@@ -48,10 +44,6 @@
         <option value="3">Ver rechazados</option>
         <option value="4">Ver nuevos</option>
       </select>
-
-      <p [hidden]="opcionSeleccionado == '0'">
-        Haz seleccionado la opción # {{ verSeleccion }}
-      </p>
     </fieldset>
   </div>
 
@@ -69,13 +61,13 @@
       </div>-->
       <div class="d-flex w-100 justify-content-between">
         <h4 class="card-title">{{ articulo.titulo }}</h4>
-        <div *ngIf = "articulo.es_publicado == 1">
+        <div *ngIf="articulo.es_publicado == 1">
           <small class="text-muted" class="publicado">Publicado</small>
         </div>
-        <div *ngIf = "articulo.es_publicado == 0 && articulo.es_evaluado == 1">
+        <div *ngIf="articulo.es_publicado == 0 && articulo.es_evaluado == 1">
           <small class="text-muted" class="rechazado">Rechazado</small>
         </div>
-        <div *ngIf = "articulo.es_publicado == 0 && articulo.es_evaluado == 0">
+        <div *ngIf="articulo.es_publicado == 0 && articulo.es_evaluado == 0">
           <small class="text-muted" class="nuevo">Nuevo</small>
         </div>
       </div>
