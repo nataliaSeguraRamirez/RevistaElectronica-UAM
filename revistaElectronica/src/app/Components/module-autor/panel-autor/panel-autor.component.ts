@@ -22,7 +22,7 @@ export class PanelAutorComponent implements OnInit {
     })
   }
 
-  public verArticulo(index: number) {
+  public verArticulo(index:number) {
     console.log(index)
     this.router.navigate([{ outlets: { autor: ['articulo', index] } }])
   }

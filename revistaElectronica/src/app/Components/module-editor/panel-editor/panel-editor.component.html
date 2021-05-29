@@ -31,32 +31,11 @@
     </div>
   </div>
 </nav>
-<div class="container">
-  <input #opcion type="radio" name="nombreradio" value="valor1" checked />
-  <label class="form-check-label" for="flexRadioDefault1">
-    Ver todos
-  </label>
-  <br>
-  <input #opcion type="radio" name="nombreradio" value="valor2" />
-  <label class="form-check-label" for="flexRadioDefault1">
-    Ver no calificados
-  </label>
-  <br>
-  <input #opcion type="radio" name="nombreradio" value="valor3" />
-  <label class="form-check-label" for="flexRadioDefault1">
-    Ver aceptados
-  </label>
-  <br>
-  <input #opcion type="radio" name="nombreradio" value="valor4" />
-  <label class="form-check-label" for="flexRadioDefault1">
-    Ver rechazados
-  </label>
-</div>
 <div class="container mb-3" style="margin-top: 10px;">
   <div
     *ngFor="let articulo of articulos1; let i = index"
     class="card border-primary mb-3"
-    style="max-width: 60%;"
+    style="max-width: 100%;"
   >
     <div class="card-body">
       <div class="card-header">Autor: {{ articulo.autor_ced }}</div>
@@ -68,12 +47,13 @@
       <div class="d-flex w-100 justify-content-between">
         <h4 class="card-title">{{ articulo.titulo }}</h4>
         <div *ngIf = "articulo.es_publicado == 1">
-          <small class="text-muted">Publicado</small>
+          <small class="text-muted" class="publicado">Publicado</small>
         </div>
         <div *ngIf = "articulo.es_publicado == 0 && articulo.es_evaluado == 1">
-          <small class="text-muted">Rechazado</small>
-        </div><div *ngIf = "articulo.es_publicado == 0 && articulo.es_evaluado == 0">
-          <small class="text-muted">Nuevo</small>
+          <small class="text-muted" class="rechazado">Rechazado</small>
+        </div>
+        <div *ngIf = "articulo.es_publicado == 0 && articulo.es_evaluado == 0">
+          <small class="text-muted" class="nuevo">Nuevo</small>
         </div>
       </div>
       <p class="card-text">

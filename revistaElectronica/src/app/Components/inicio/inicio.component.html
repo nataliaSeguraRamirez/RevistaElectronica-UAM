@@ -4,7 +4,7 @@
   <div
     *ngFor="let articulo of articulos1; let i = index"
     class="card border-primary mb-3"
-    style="max-width: 60%;"
+    style="max-width: 100%;"
   >
     <div class="card-body">
       <div class="card-header mb-3">Autor: {{ articulo.autor_ced }}</div>
@@ -18,7 +18,7 @@
         {{ articulo.descripcion }}
       </p>
       <a class="btn btn-primary" (click)="verArticulo(i)">Leer</a>
-      
+
     </div>
   </div>
 </div>

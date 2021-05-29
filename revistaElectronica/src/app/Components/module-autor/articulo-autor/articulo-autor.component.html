@@ -1,11 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-warning text-white">
+  <div class="container">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item active" routerLinkActive="active">
+          <a
+            class="nav-link"
+            [routerLink]="['/', { outlets: { autor: ['panel-autor'] } }]"
+          >
+            Ver mis artículos
+          </a>
+        </li>
+        <li class="nav-item active" routerLinkActive="active">
+          <a
+            class="nav-link"
+            [routerLink]="['/', { outlets: { autor: ['crear-articulo'] } }]"
+          >
+            Crear Articulo
+          </a>
+        </li>
+        <li class="nav-item active" routerLinkActive="active">
+          <a class="nav-link" href="/(lector:logout)">
+            Log Out
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 <div class="container" style="margin-top: 10px;">
   <div class="jumbotron">
-    <div class="row">
-      <div class="col-md-8">
-        <h5>
-          <b>Titulo:</b>
-          <i>{{ articulo.titulo }}</i>
-        </h5>
+    <div>
+      <div class="d-flex w-100 justify-content-between">
+        <h4 class="card-title">{{ articulo.titulo }}</h4>
+        <div *ngIf = "articulo.es_publicado == 1">
+          <small class="text-muted" class="publicado">Publicado</small>
+        </div>
+        <div *ngIf = "articulo.es_publicado == 0 && articulo.es_evaluado == 1">
+          <small class="text-muted" class="rechazado">Rechazado</small>
+        </div>
+        <div *ngIf = "articulo.es_publicado == 0 && articulo.es_evaluado == 0">
+          <small class="text-muted" class="nuevo">Nuevo</small>
+        </div>
+      </div>
+      <div >
         <hr />
         <p>
           <b>descripción</b>
@@ -20,4 +68,3 @@
       </div>
     </div>
   </div>
-</div>

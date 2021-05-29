@@ -22,9 +22,10 @@ export class ArticuloAutorComponent implements OnInit {
   ngOnInit(): void {}
 
   public obtenerArticulos() {
-    this.servidor.obtenerArticulosPublicados().subscribe((data) => {
+    this.servidor.obtenerArticulosAutor().subscribe((data) => {
       this.articulos1 = data as articulos[]
       this.activatedRoute.params.subscribe((params) => {
+        console.log(params['id'])
         this.articulo = this.articulos1[params['id']]
         this.index = params['id']
       })

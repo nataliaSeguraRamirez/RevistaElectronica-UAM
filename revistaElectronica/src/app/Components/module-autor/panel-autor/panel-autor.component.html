@@ -44,16 +44,26 @@
   <div
     *ngFor="let articulo of articulos1; let i = index"
     class="card border-primary mb-3"
-    style="max-width: 60%;"
+    style="max-width: 100%;"
   >
     <div class="card-body">
-      <div class="card-header mb-3"></div>
       <!--<div *ngFor="let autor of autores" class="card-header">
           <template [ngIf]="{{autor.cedula}} == '{{articulo.autor_ced}}'">
             {{ autor.nombre }} {{ autor.apellido }}
           </template>
         </div>-->
-      <h4 class="card-title">{{ articulo.titulo }}</h4>
+        <div class="d-flex w-100 justify-content-between">
+          <h4 class="card-title">{{ articulo.titulo }}</h4>
+          <div *ngIf = "articulo.es_publicado == 1">
+            <small class="text-muted" class="publicado">Publicado</small>
+          </div>
+          <div *ngIf = "articulo.es_publicado == 0 && articulo.es_evaluado == 1">
+            <small class="text-muted" class="rechazado">Rechazado</small>
+          </div>
+          <div *ngIf = "articulo.es_publicado == 0 && articulo.es_evaluado == 0">
+            <small class="text-muted" class="nuevo">Nuevo</small>
+          </div>
+        </div>
       <p class="card-text">
         {{ articulo.descripcion }}
       </p>

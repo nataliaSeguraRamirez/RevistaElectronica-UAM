@@ -9,6 +9,7 @@ import { LogoutComponent } from './Components/logout/logout.component'
 import { PanelEditorComponent } from './Components/module-editor/panel-editor/panel-editor.component'
 import { RegistroComponent } from './Components/registro/registro.component'
 import { AutenticarGuard } from './guards/autenticar.guard'
+import { ArticuloAutorComponent } from './Components/module-autor/articulo-autor/articulo-autor.component'
 
 const routes: Routes = [
   {path: 'articulo/:id',component: ArticuloEditorComponent,outlet: 'editor',canActivate: [AutenticarGuard],},
@@ -21,6 +22,12 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, outlet: 'lector' },
   { path: 'logout', component: LogoutComponent, outlet: 'lector' },
   { path: 'registro', component: RegistroComponent, outlet: 'lector' },
+  {
+    path: 'articulo/:id',
+    component: ArticuloAutorComponent,
+    outlet: 'autor',
+    canActivate: [AutenticarGuard],
+  },
   {
     path: '**',
     pathMatch: 'full',

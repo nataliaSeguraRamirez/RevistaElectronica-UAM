@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { articulos } from 'src/app/Modelos/articulos.interface'
 import { ServidorService } from 'src/app/servidor.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-articulo-editor',
@@ -15,11 +16,14 @@ export class ArticuloEditorComponent implements OnInit {
   constructor(
     private servidor: ServidorService,
     private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {
     this.obtenerArticulos()
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.obtenerArticulos()
+  }
 
   public obtenerArticulos() {
     this.servidor.obtenerArticulosTotal().subscribe((data) => {
@@ -31,7 +35,7 @@ export class ArticuloEditorComponent implements OnInit {
     })
   }
   public calificarArticulo(id: any, evaluado: any, publicado: any) {
-    this.servidor.calificarArticulo(id, evaluado, publicado)
-
+    this.servidor.calificarArticulo(id, evaluado, publicado);
+    this.ngOnInit();
   }
 }
