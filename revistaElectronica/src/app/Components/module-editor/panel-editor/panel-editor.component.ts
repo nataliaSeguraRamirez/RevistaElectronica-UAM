@@ -15,15 +15,54 @@ export class PanelEditorComponent implements OnInit {
 
   public articulos1 = [] as articulos[]
   constructor(private servidor: ServidorService, private router: Router) {
-    this.obtenerArticulos()
+    this.obtenerArticulos('0')
   }
   ngOnInit(): void {}
 
-  public obtenerArticulos() {
-    this.servidor.obtenerArticulosTotal().subscribe((data) => {
-      console.log(data)
-      this.articulos1 = data as articulos[]
-    })
+  public obtenerArticulos(opcion: any) {
+    //console.log(this.verSeleccion)
+    if (opcion == '' || opcion == '0' || opcion == '1') {
+      this.servidor.obtenerArticulosTotal().subscribe((data) => {
+        //alert('Todos')
+        this.articulos1 = data as articulos[]
+      })
+    } else {
+      if (opcion == '2') {
+        this.servidor.obtenerArticulosPublicados().subscribe((data) => {
+          //alert('Publicados')
+          this.articulos1 = data as articulos[]
+        })
+      } else {
+        if (opcion == '3') {
+          this.servidor.obtenerArticulosTotal().subscribe((data) => {
+            //alert('Rechazados')
+            const articulos_temp = data as articulos[]
+            for (let index = 0; index < articulos_temp.length; index++) {
+              if (
+                articulos_temp[index].es_evaluado == 1 &&
+                articulos_temp[index].es_publicado == 0
+              ) {
+                this.articulos1.push(articulos_temp[index])
+              }
+            }
+          })
+        }
+        if (opcion == '4') {
+          this.servidor.obtenerArticulosTotal().subscribe((data) => {
+            //alert('Nuevos')
+            const articulos_temp = data as articulos[]
+            for (let index = 0; index < articulos_temp.length; index++) {
+              if (
+                articulos_temp[index].es_evaluado == 0 &&
+                articulos_temp[index].es_publicado == 0
+              ) {
+                this.articulos1.push(articulos_temp[index])
+              }
+            }
+          })
+        }
+      }
+    }
   }
 
   public verArticulo(index: number) {
@@ -33,5 +72,6 @@ export class PanelEditorComponent implements OnInit {
 
   public seleccionar() {
     this.verSeleccion = this.opcionSeleccionado
+    this.obtenerArticulos(this.verSeleccion)
   }
 }
