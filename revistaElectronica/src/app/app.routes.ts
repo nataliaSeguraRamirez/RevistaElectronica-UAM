@@ -8,7 +8,7 @@ import { PanelEditorComponent } from './Components/module-editor/panel-editor/pa
 import { RegistroComponent } from './Components/registro/registro.component'
 
 const routes: Routes = [
-  //{ path: 'panel', component: PanelEditorComponent, outlet: 'editor' },
+  { path: 'panel', component: PanelEditorComponent, outlet: 'editor' },
   { path: 'inicio', component: InicioComponent, outlet: 'lector' },
   { path: 'articulos/:id', component: ArticulosComponent, outlet: 'lector' },
   { path: 'autores', component: AutoresComponent, outlet: 'lector' },
