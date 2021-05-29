@@ -1,3 +1,4 @@
+<base href="/" />
 <nav class="navbar navbar-expand-lg navbar-light bg-warning text-white">
   <div class="container">
     <button
@@ -16,16 +17,21 @@
         <li class="nav-item active" routerLinkActive="active">
           <a
             class="nav-link"
+            [routerLink]="['/', { outlets: { lector: ['panel-autor'] } }]"
+          >
+            Ver mis artículos
+          </a>
+        </li>
+        <li class="nav-item active" routerLinkActive="active">
+          <a
+            class="nav-link"
             [routerLink]="['/', { outlets: { autor: ['crear-articulo'] } }]"
           >
             Crear Articulo
           </a>
         </li>
         <li class="nav-item active" routerLinkActive="active">
-          <a
-            class="nav-link"
-            [routerLink]="['/', { outlets: { autor: ['panel-autor'] } }]"
-          >
+          <a class="nav-link" href="/(lector:logout)">
             Log Out
           </a>
         </li>
@@ -33,7 +39,6 @@
     </div>
   </div>
 </nav>
-
 <div
   class="form-group"
   style="margin-top: 50px; margin-left: 250px; width: 50%;"

@@ -1,1 +1,15 @@
-<p>logout works!</p>
+<div class="container">
+  <div>
+    HAS CERRADO SESIÓN CON ÉXITO
+  </div>
+  <p>
+    <a class="mb-5" [routerLink]="['/', { outlets: { lector: ['inicio'] } }]">
+      Ir a la página principal
+    </a>
+  </p>
+  <p>
+    <a class="mb-5" [routerLink]="['/', { outlets: { lector: ['login'] } }]">
+      Volver a ingresar
+    </a>
+  </p>
+</div>
