@@ -1,34 +1,68 @@
-<div class="container">
-  <nav class="navbar navbar-expand-lg navbar-light bg-warning text-white">
-    <div class="container">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item active" routerLinkActive="active">
-            <a class="nav-link">Log out</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="btn-group dropstart">
-    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-      Dropstart
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-warning text-white">
+  <div class="container">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <ul class="dropdown-menu">
-      <li><button class="dropdown-item" type="button">Action</button></li>
-      <li><button class="dropdown-item" type="button">Another action</button></li>
-      <li><button class="dropdown-item" type="button">Something else here</button></li>
-    </ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item active" routerLinkActive="active">
+          <a class="nav-link"></a>
+        </li>
+        <li class="nav-item active" routerLinkActive="active">
+          <a class="nav-link"></a>
+        </li>
+        <li class="nav-item active" routerLinkActive="active">
+          <a class="nav-link"></a>
+        </li>
+        <li class="nav-item active" routerLinkActive="active">
+          <a class="nav-link">Log out</a>
+        </li>
+      </ul>
+    </div>
   </div>
+</nav>
+<div class="container">
+  <div class="btn-group">
+    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
+      Opciones
+    </button>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton" onclick="javascript:console.log( $(event.target).data('mode'))">
+      <a class="dropdown-item" href="#" data-mode="mode1" data-dir="/home">Recibidos</a>
+      <a class="dropdown-item " href="#" data-mode="mode2" data-dir="/foo">Aceptados</a>
+      <a class="dropdown-item" href="#" data-mode="mode3" data-dir="/bar">Rechazados</a>
+      <a class="dropdown-item" href="#" data-mode="mode3" data-dir="/bar">Todos</a>
+    </div>
+    <br>
+    <br>
+    <br>
+  </div>
+    <div *ngFor="let articulo of articulos1; let i = index"
+    class="card border-primary mb-3"
+    style="max-width: 60%;"
+    >
+    <div class="card-body">
+      <div class="card-header mb-3">Autor: {{ articulo.autor_ced }}</div>
+      <!--<div *ngFor="let autor of autores" class="card-header">
+        <template [ngIf]="{{autor.cedula}} == '{{articulo.autor_ced}}'">
+          {{ autor.nombre }} {{ autor.apellido }}
+        </template>
+      </div>-->
+      <h4 class="card-title">{{ articulo.titulo }}</h4>
+      <p class="card-text">
+        {{ articulo.descripcion }}
+      </p>
+      <a class="btn btn-primary" (click)="verArticulo(i)">Leer</a>
+    </div>
+  </div>
+
 </div>

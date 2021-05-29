@@ -23,5 +23,9 @@ export class PanelEditorComponent implements OnInit {
       this.articulos1 = data as articulos[]
     })
   }
+  verArticulo(index: number) {
+    console.log(index)
+    this.router.navigate([{ outlets: { editor: ['articulos', index] } }])
+  }
 
 }

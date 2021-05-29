@@ -4,11 +4,15 @@ import { AutoresComponent } from './Components/autores/autores.component'
 import { InformacionComponent } from './Components/informacion/informacion.component'
 import { InicioComponent } from './Components/inicio/inicio.component'
 import { LoginComponent } from './Components/login/login.component'
+import { ArticuloEditorComponent } from './Components/module-editor/articulo-editor/articulo-editor.component'
 import { PanelEditorComponent } from './Components/module-editor/panel-editor/panel-editor.component'
 import { RegistroComponent } from './Components/registro/registro.component'
+import { AutenticarGuard } from './guards/autenticar.guard'
 
 const routes: Routes = [
-  { path: 'panel', component: PanelEditorComponent, outlet: 'editor' },
+  {path: 'articulo/:id',component: ArticuloEditorComponent,outlet: 'editor',canActivate: [AutenticarGuard],},
+  {path: 'panel',
+    component: PanelEditorComponent, outlet: 'editor', canActivate: [AutenticarGuard]},
   { path: 'inicio', component: InicioComponent, outlet: 'lector' },
   { path: 'articulos/:id', component: ArticulosComponent, outlet: 'lector' },
   { path: 'autores', component: AutoresComponent, outlet: 'lector' },
@@ -16,9 +20,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, outlet: 'lector' },
   { path: 'registro', component: RegistroComponent, outlet: 'lector' },
   {
-    path: ' ',
+    path: '**',
     pathMatch: 'full',
-    redirectTo: '(lector:inicio)',
+    redirectTo: '/(lector:inicio)',
   },
 ]
 
