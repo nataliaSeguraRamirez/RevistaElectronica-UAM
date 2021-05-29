@@ -1,9 +1,15 @@
+<app-menu-navegacion></app-menu-navegacion>
 <div class="container">
   <img class="imagen" src="../../../assets/img/backgroundLogIn.png" alt="" />
   <div class="content">
     <p>
       ¿Eres un autor nuevo?
-      <a routerLink="/registro" routerLinkActive="active">registrate</a>
+      <a
+        [routerLink]="['/', { outlets: { lector: ['registro'] } }]"
+        routerLinkActive="active"
+      >
+        registrate
+      </a>
     </p>
     <div
       class="form-group"

@@ -21,7 +21,8 @@ export class ServidorService {
         if (data.length != 0) {
           localStorage.setItem('user_cedula', '' + usuario.cedula)
           if (usuario.rol_id == 1) {
-            localStorage.setItem('loginEditor', 'true');
+            localStorage.setItem('loginEditor', 'true')
+            alert('Editor autenticado!')
             return true
           }
           if (usuario.rol_id == 2) {
@@ -37,7 +38,7 @@ export class ServidorService {
         }
         return false
       })
-      return false
+    return false
   }
 
   public obtenerArticulosTotal() {

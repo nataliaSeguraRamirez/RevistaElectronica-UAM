@@ -1,14 +1,11 @@
-import { NgModule } from '@angular/core';
-import { CommonModule, formatCurrency } from '@angular/common';
-import { ArticuloEditorComponent } from './articulo-editor/articulo-editor.component';
+import { NgModule } from '@angular/core'
+import { CommonModule, formatCurrency } from '@angular/common'
+import { ArticuloEditorComponent } from './articulo-editor/articulo-editor.component'
 import { PanelEditorComponent } from './panel-editor/panel-editor.component'
-import { appRouting } from './app.routes'
-
+import { appEditorRouting } from './app.routes'
 
 @NgModule({
   declarations: [ArticuloEditorComponent, PanelEditorComponent],
-  imports: [
-    CommonModule, appRouting,
-  ]
+  imports: [CommonModule, appEditorRouting],
 })
-export class ModuleEditorModule { }
+export class ModuleEditorModule {}

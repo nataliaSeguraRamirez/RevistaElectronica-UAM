@@ -12,7 +12,7 @@ import { ServidorService } from 'src/app/servidor.service'
 export class InicioComponent implements OnInit {
   public articulos1 = [] as articulos[]
   public autores = [] as usuarios[]
-  constructor(private servidor: ServidorService, private router:Router) {
+  constructor(private servidor: ServidorService, private router: Router) {
     this.obtenerAutores()
     this.obtenerArticulos()
   }
@@ -31,8 +31,8 @@ export class InicioComponent implements OnInit {
       this.articulos1 = data as articulos[]
     })
   }
-  verArticulo(index:number){
+  verArticulo(index: number) {
     console.log(index)
-    this.router.navigate(['articulos', index]);
+    this.router.navigate([{ outlets: { lector: ['articulos', index] } }])
   }
 }

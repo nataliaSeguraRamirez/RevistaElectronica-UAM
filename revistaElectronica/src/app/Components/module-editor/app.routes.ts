@@ -1,10 +1,21 @@
 import { RouterModule, Routes } from '@angular/router'
+import { AutenticarGuard } from 'src/app/guards/autenticar.guard'
 import { ArticuloEditorComponent } from './articulo-editor/articulo-editor.component'
-import { PanelEditorComponent} from './panel-editor/panel-editor.component'
+import { PanelEditorComponent } from './panel-editor/panel-editor.component'
 
 const routes: Routes = [
-  {path: 'articulo/:id', component: ArticuloEditorComponent},
-  {path: 'panel', component: PanelEditorComponent},
-];
+  {
+    path: 'articulo/:id',
+    component: ArticuloEditorComponent,
+    outlet: 'editor',
+    canActivate: [AutenticarGuard],
+  },
+  {
+    path: 'panel',
+    component: PanelEditorComponent,
+    outlet: 'editor',
+    canActivate: [AutenticarGuard],
+  },
+]
 
-export const appRouting = RouterModule.forRoot(routes)
+export const appEditorRouting = RouterModule.forRoot(routes)

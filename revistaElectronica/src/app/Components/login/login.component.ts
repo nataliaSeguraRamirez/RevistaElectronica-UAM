@@ -8,18 +8,17 @@ import { Router } from '@angular/router'
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private servidor: ServidorService,
-              private router: Router) {}
+  constructor(private servidor: ServidorService, private router: Router) {}
 
   ngOnInit(): void {}
   public login(correo: any, clave: any) {
-
     this.servidor.validarIngreso(correo.value, clave.value)
-    if (localStorage.getItem('loginEditor') == 'true'){
-      this.router.navigate(['/panel'])
+    if (localStorage.getItem('loginEditor') == 'true') {
+      
+      this.router.navigate([{ outlets: { editor: ['/panel'] } }])
     }
-    if (localStorage.getItem('loginAutor') == 'true'){
-
+    if (localStorage.getItem('loginAutor') == 'true') {
+      //this.router.navigate([{ outlets: { editor: '/panel' } }])
     }
   }
 }
