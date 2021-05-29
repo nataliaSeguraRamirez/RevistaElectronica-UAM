@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-light bg-warning text-white">
   <div class="container">
     <button
@@ -31,28 +30,28 @@
     </div>
   </div>
 </nav>
-<div class="container">
-  <input #opcion type="radio" name="nombreradio" value="valor1" checked />
-  <label class="form-check-label" for="flexRadioDefault1">
-    Ver todos
-  </label>
-  <br>
-  <input #opcion type="radio" name="nombreradio" value="valor2" />
-  <label class="form-check-label" for="flexRadioDefault1">
-    Ver no calificados
-  </label>
-  <br>
-  <input #opcion type="radio" name="nombreradio" value="valor3" />
-  <label class="form-check-label" for="flexRadioDefault1">
-    Ver aceptados
-  </label>
-  <br>
-  <input #opcion type="radio" name="nombreradio" value="valor4" />
-  <label class="form-check-label" for="flexRadioDefault1">
-    Ver rechazados
-  </label>
-</div>
+
 <div class="container mb-3" style="margin-top: 10px;">
+  <div class="form-group">
+    <fieldset>
+      <label class="form-label mt-4">
+        Filtrar artículos
+      </label>
+      <br />
+      <select [(ngModel)]="opcionSeleccionado" (change)="seleccionar()">
+        <option value="0">Filtrar</option>
+        <option value="1">Ver todos</option>
+        <option value="2">Ver publicados</option>
+        <option value="3">Ver rechazados</option>
+        <option value="4">Ver nuevos</option>
+      </select>
+
+      <p [hidden]="opcionSeleccionado == '0'">
+        Haz seleccionado la opción # {{ verSeleccion }}
+      </p>
+    </fieldset>
+  </div>
+
   <div
     *ngFor="let articulo of articulos1; let i = index"
     class="card border-primary mb-3"
@@ -69,7 +68,7 @@
       <p class="card-text">
         {{ articulo.descripcion }}
       </p>
-      <a class="btn btn-primary mb-3" (click)="verArticulo(i)">Leer</a>
+      <a class="btn btn-primary mb-3" (click)="verArticulo(i)">Calificar</a>
     </div>
   </div>
 </div>
