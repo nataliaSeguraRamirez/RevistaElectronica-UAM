@@ -15,7 +15,8 @@ import { PieDePaginaComponent } from './Components/pie-de-pagina/pie-de-pagina.c
 import { ServidorService } from './servidor.service'
 import { HttpClientModule } from '@angular/common/http'
 import { ModuleEditorModule } from './Components/module-editor/module-editor.module'
-import { ModuleAutorModule } from './Components/module-autor/module-autor.module'
+import { ModuleAutorModule } from './Components/module-autor/module-autor.module';
+import { LogoutComponent } from './Components/logout/logout.component'
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ModuleAutorModule } from './Components/module-autor/module-autor.module
     HeaderComponent,
     SearchBarComponent,
     RegistroComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
