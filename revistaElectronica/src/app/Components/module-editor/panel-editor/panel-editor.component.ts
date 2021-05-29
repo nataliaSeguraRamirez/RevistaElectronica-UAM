@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { articulos } from 'src/app/Modelos/articulos.interface';
+import { ServidorService } from 'src/app/servidor.service';
 
 @Component({
   selector: 'app-panel-editor',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanelEditorComponent implements OnInit {
 
-  constructor() { }
+  public articulos1 = [] as articulos[]
+  constructor(private servidor: ServidorService, private router: Router) {
+    this.obtenerArticulos()
+  }
 
   ngOnInit(): void {
+  }
+  public obtenerArticulos() {
+    this.servidor.obtenerArticulosTotal().subscribe((data) => {
+      console.log(data)
+      this.articulos1 = data as articulos[]
+    })
   }
 
 }
