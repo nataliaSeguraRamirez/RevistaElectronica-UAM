@@ -14,16 +14,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item active" routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['inicio']">Inicio</a>
+          <a class="nav-link" [routerLink]="['/', { outlets: { lector: ['inicio'] } }]">Inicio</a>
         </li>
         <li class="nav-item active" routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['autores']">Autores</a>
+          <a class="nav-link" [routerLink]="['/', { outlets: { lector: ['autores'] } }]">Autores</a>
         </li>
         <li class="nav-item active" routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['informacion']">Información</a>
+          <a class="nav-link" [routerLink]="['/', { outlets: { lector: ['informacion'] } }]" >Información</a>
         </li>
         <li class="nav-item active" routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['login']">Log In</a>
+          <a class="nav-link"  [routerLink]="['/', { outlets: { lector: ['login'] } }]">Log In</a>
         </li>
       </ul>
     </div>

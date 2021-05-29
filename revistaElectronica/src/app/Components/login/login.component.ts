@@ -15,5 +15,11 @@ export class LoginComponent implements OnInit {
   public login(correo: any, clave: any) {
 
     this.servidor.validarIngreso(correo.value, clave.value)
+    if (localStorage.getItem('loginEditor') == 'true'){
+      this.router.navigate(['/panel'])
+    }
+    if (localStorage.getItem('loginAutor') == 'true'){
+
+    }
   }
 }

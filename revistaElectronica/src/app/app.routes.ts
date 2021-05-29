@@ -7,12 +7,12 @@ import { LoginComponent } from './Components/login/login.component'
 import { RegistroComponent } from './Components/registro/registro.component'
 
 const routes: Routes = [
-  { path: 'inicio', component: InicioComponent },
-  { path: 'articulos/:id', component: ArticulosComponent },
-  { path: 'autores', component: AutoresComponent },
-  { path: 'informacion', component: InformacionComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'registro', component: RegistroComponent },
+  { path: 'inicio', component: InicioComponent,outlet:'lector' },
+  { path: 'articulos/:id', component: ArticulosComponent, outlet:'lector'},
+  { path: 'autores', component: AutoresComponent, outlet:'lector'},
+  { path: 'informacion', component: InformacionComponent, outlet:'lector' },
+  { path: 'login', component: LoginComponent, outlet:'lector'},
+  { path: 'registro', component: RegistroComponent, outlet:'lector'},
   { path: '**', pathMatch: 'full', redirectTo: 'inicio' },
 ]
 

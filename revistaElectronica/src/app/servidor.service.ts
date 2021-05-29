@@ -31,8 +31,8 @@ export class ServidorService {
           }
         } else {
           alert('Datos incorrectos')
-          localStorage.setItem('loginAutor', 'False')
-          localStorage.setItem('loginEditor', 'False')
+          localStorage.setItem('loginAutor', 'false')
+          localStorage.setItem('loginEditor', 'false')
           return false
         }
         return false
