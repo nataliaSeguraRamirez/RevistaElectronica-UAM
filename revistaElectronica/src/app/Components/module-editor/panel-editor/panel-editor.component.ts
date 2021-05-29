@@ -24,10 +24,6 @@ export class PanelEditorComponent implements OnInit {
 
   public verArticulo(index: number) {
     console.log(index)
-    this.router.navigate([{ outlets: { lector: ['articulos', index] } }])
-  }
-
-  public calificarArticulo(id: any, evaluado: any, publicado: any) {
-    this.servidor.calificarArticulo(id, evaluado, publicado)
+    this.router.navigate([{ outlets: { editor: ['articulo', index] } }])
   }
 }
