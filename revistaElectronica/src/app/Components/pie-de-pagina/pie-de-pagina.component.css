@@ -1,11 +1,10 @@
 .footer {
   bottom: 0;
   width: 100%;
-  height: 40px;
   text-align: center;
-  position: static;
   margin-top:15px ;
+
 }
 .background-footer {
-  background-color: rgb(194, 194, 194);
+  background: #7ac1ff 0% 0% no-repeat padding-box;
 }

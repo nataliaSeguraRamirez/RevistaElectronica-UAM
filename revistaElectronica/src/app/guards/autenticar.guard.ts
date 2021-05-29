@@ -41,6 +41,6 @@ export class AutenticarGuard implements CanActivate {
       alert('Bienvenido al panel de Autor')
       return true
     }
-    return true
+    return false
   }
 }

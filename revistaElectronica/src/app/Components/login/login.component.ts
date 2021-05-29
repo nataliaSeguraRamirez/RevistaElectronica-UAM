@@ -14,9 +14,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
   public login(correo: any, clave: any) {
 
-    if (this.servidor.validarIngreso(correo.value, clave.value)){
-      this.router.navigate(['inicio']);
-    }
-
+    this.servidor.validarIngreso(correo.value, clave.value)
   }
 }

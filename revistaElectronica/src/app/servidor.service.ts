@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { usuarios } from './Modelos/usuarios.interface'
-import { ModuleEditorModule } from './Components/module-editor/module-editor.module'
 import { articulos } from './Modelos/articulos.interface'
-import { roles } from './Modelos/roles.interface'
-import { Observable } from 'rxjs'
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +11,6 @@ export class ServidorService {
   private direccion = 'http://127.0.0.1:1337'
 
   public validarIngreso(correoU: any, claveU: any) {
-    alert('datos guardados: ' + correoU + ' , ' + claveU)
     this.conexion
       .post(this.direccion + '/logIn', {
         correo: correoU,
@@ -22,10 +18,8 @@ export class ServidorService {
       })
       .subscribe((data: any) => {
         const usuario = data[0] as usuarios
-        console.log(data)
         if (data.length != 0) {
-          /*alert('me enviaron: ' + usuario.nombre)*/
-          localStorage.setItem('user_cedula', JSON.stringify(usuario.cedula))
+          localStorage.setItem('user_cedula', '' + usuario.cedula)
           if (usuario.rol_id == 1) {
             localStorage.setItem('loginEditor', 'true');
             return true
@@ -36,7 +30,7 @@ export class ServidorService {
             return true
           }
         } else {
-          /*alert('Datos incorrectos')*/
+          alert('Datos incorrectos')
           localStorage.setItem('loginAutor', 'False')
           localStorage.setItem('loginEditor', 'False')
           return false
@@ -46,15 +40,27 @@ export class ServidorService {
       return false
   }
 
+  public obtenerArticulosTotal() {
+    return this.conexion.get<articulos[]>(
+      this.direccion + '/obtenerArticulosTotal',
+    )
+  }
+
+  public obtenerArticulosAutor() {
+    return this.conexion.get<articulos[]>(
+      this.direccion +
+        '/obtenerArticulosAutor/' +
+        localStorage.getItem('user_cedula'),
+    )
+  }
+
   public obtenerArticulosPublicados() {
-    /*console.log('Solicitar articulos')*/
     return this.conexion.get<articulos[]>(
       this.direccion + '/obtenerArticulosPublicados',
     )
   }
 
   public obtenerAutores() {
-    console.log('Solicitar autores')
     return this.conexion.get<usuarios[]>(this.direccion + '/obtenerAutores')
   }
 }
