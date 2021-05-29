@@ -27,6 +27,6 @@ export class PanelEditorComponent implements OnInit {
 
   public verArticulo(index: number) {
     console.log(index)
-    this.router.navigate([{ outlets: { lec: ['articulo', index] } }])
+    this.router.navigate([{ outlets: { editor: ['articulo', index] } }])
   }
 }

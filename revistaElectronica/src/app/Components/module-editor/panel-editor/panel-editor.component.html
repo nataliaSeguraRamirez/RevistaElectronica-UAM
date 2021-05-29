@@ -65,11 +65,21 @@
           {{ autor.nombre }} {{ autor.apellido }}
         </template>
       </div>-->
-      <h4 class="card-title">{{ articulo.titulo }}</h4>
+      <div class="d-flex w-100 justify-content-between">
+        <h4 class="card-title">{{ articulo.titulo }}</h4>
+        <div *ngIf = "articulo.es_publicado == 1">
+          <small class="text-muted">Publicado</small>
+        </div>
+        <div *ngIf = "articulo.es_publicado == 0 && articulo.es_evaluado == 1">
+          <small class="text-muted">Rechazado</small>
+        </div><div *ngIf = "articulo.es_publicado == 0 && articulo.es_evaluado == 0">
+          <small class="text-muted">Nuevo</small>
+        </div>
+      </div>
       <p class="card-text">
         {{ articulo.descripcion }}
       </p>
-      <a class="btn btn-primary mb-3" (click)="verArticulo(i)">Leer</a>
+      <a class="btn btn-primary mb-3" (click)="verArticulo(i)"> Calificar </a>
     </div>
   </div>
 </div>
