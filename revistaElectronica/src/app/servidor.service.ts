@@ -77,4 +77,21 @@ export class ServidorService {
       })
       .subscribe((data) => {})
   }
+
+  public registrarAutor(
+    nombreU: any,
+    apellidoU: any,
+    cedulaU: any,
+    correoU: any,
+    claveU: any,
+  ) {
+    return this.conexion.post(this.direccion + '/registrarAutor', {
+      nombre: nombreU,
+      apellido: apellidoU,
+      cedula: cedulaU,
+      correo: correoU,
+      clave: claveU,
+      rol_id: 2,
+    })
+  }
 }

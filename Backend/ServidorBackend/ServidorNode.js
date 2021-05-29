@@ -47,3 +47,10 @@ App.post('/evaluarArticulo', async (req, res, next) => {
     },
   )
 })
+
+App.post('/registrarAutor', async (req, res, next) => {
+  console.log(req.body)
+  const objdocumento = new usuarios(req.body)
+  objdocumento.save()
+  res.json('true')
+})
