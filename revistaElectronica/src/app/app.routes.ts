@@ -5,16 +5,25 @@ import { InformacionComponent } from './Components/informacion/informacion.compo
 import { InicioComponent } from './Components/inicio/inicio.component'
 import { LoginComponent } from './Components/login/login.component'
 import { ArticuloEditorComponent } from './Components/module-editor/articulo-editor/articulo-editor.component'
-import { LogoutComponent } from './Components/logout/logout.component'
+import { LogoutComponent } from 'src/app/Components/logout/logout.component'
 import { PanelEditorComponent } from './Components/module-editor/panel-editor/panel-editor.component'
 import { RegistroComponent } from './Components/registro/registro.component'
 import { AutenticarGuard } from './guards/autenticar.guard'
 import { ArticuloAutorComponent } from './Components/module-autor/articulo-autor/articulo-autor.component'
 
 const routes: Routes = [
-  {path: 'articulo/:id',component: ArticuloEditorComponent,outlet: 'editor',canActivate: [AutenticarGuard],},
-  {path: 'panel',
-    component: PanelEditorComponent, outlet: 'editor', canActivate: [AutenticarGuard]},
+  {
+    path: 'articulo/:id',
+    component: ArticuloEditorComponent,
+    outlet: 'editor',
+    canActivate: [AutenticarGuard],
+  },
+  {
+    path: 'panel',
+    component: PanelEditorComponent,
+    outlet: 'editor',
+    canActivate: [AutenticarGuard],
+  },
   { path: 'inicio', component: InicioComponent, outlet: 'lector' },
   { path: 'articulos/:id', component: ArticulosComponent, outlet: 'lector' },
   { path: 'autores', component: AutoresComponent, outlet: 'lector' },

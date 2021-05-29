@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-light bg-warning text-white">
   <div class="container">
     <button
@@ -31,7 +30,31 @@
     </div>
   </div>
 </nav>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 185e0cb6f294c1e5ffc5efc707502632088498eb
 <div class="container mb-3" style="margin-top: 10px;">
+  <div class="form-group">
+    <fieldset>
+      <label class="form-label mt-4">
+        Filtrar artículos
+      </label>
+      <br />
+      <select [(ngModel)]="opcionSeleccionado" (change)="seleccionar()">
+        <option value="0">Filtrar</option>
+        <option value="1">Ver todos</option>
+        <option value="2">Ver publicados</option>
+        <option value="3">Ver rechazados</option>
+        <option value="4">Ver nuevos</option>
+      </select>
+
+      <p [hidden]="opcionSeleccionado == '0'">
+        Haz seleccionado la opción # {{ verSeleccion }}
+      </p>
+    </fieldset>
+  </div>
+
   <div
     *ngFor="let articulo of articulos1; let i = index"
     class="card border-primary mb-3"
@@ -59,7 +82,7 @@
       <p class="card-text">
         {{ articulo.descripcion }}
       </p>
-      <a class="btn btn-primary mb-3" (click)="verArticulo(i)"> Calificar </a>
+      <a class="btn btn-primary mb-3" (click)="verArticulo(i)">Calificar</a>
     </div>
   </div>
 </div>
