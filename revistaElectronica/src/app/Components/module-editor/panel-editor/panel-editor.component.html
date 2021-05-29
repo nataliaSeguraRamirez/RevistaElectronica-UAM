@@ -1,5 +1,4 @@
 
-
 <nav class="navbar navbar-expand-lg navbar-light bg-warning text-white">
   <div class="container">
     <button
@@ -16,18 +15,6 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item active" routerLinkActive="active">
-<<<<<<< HEAD
-          <a class="nav-link"></a>
-        </li>
-        <li class="nav-item active" routerLinkActive="active">
-          <a class="nav-link"></a>
-        </li>
-        <li class="nav-item active" routerLinkActive="active">
-          <a class="nav-link"></a>
-        </li>
-        <li class="nav-item active" routerLinkActive="active">
-          <a class="nav-link">Log out</a>
-=======
           <a
             class="nav-link"
             [routerLink]="['/', { outlets: { editor: ['panel-editor'] } }]"
@@ -39,12 +26,32 @@
           <a class="nav-link" href="/(lector:logout)">
             Log Out
           </a>
->>>>>>> master
         </li>
       </ul>
     </div>
   </div>
 </nav>
+<div class="container">
+  <input #opcion type="radio" name="nombreradio" value="valor1" checked />
+  <label class="form-check-label" for="flexRadioDefault1">
+    Ver todos
+  </label>
+  <br>
+  <input #opcion type="radio" name="nombreradio" value="valor2" />
+  <label class="form-check-label" for="flexRadioDefault1">
+    Ver no calificados
+  </label>
+  <br>
+  <input #opcion type="radio" name="nombreradio" value="valor3" />
+  <label class="form-check-label" for="flexRadioDefault1">
+    Ver aceptados
+  </label>
+  <br>
+  <input #opcion type="radio" name="nombreradio" value="valor4" />
+  <label class="form-check-label" for="flexRadioDefault1">
+    Ver rechazados
+  </label>
+</div>
 <div class="container mb-3" style="margin-top: 10px;">
   <div
     *ngFor="let articulo of articulos1; let i = index"
@@ -52,7 +59,7 @@
     style="max-width: 60%;"
   >
     <div class="card-body">
-      <div class="card-header mb-3">Autor: {{ articulo.autor_ced }}</div>
+      <div class="card-header">Autor: {{ articulo.autor_ced }}</div>
       <!--<div *ngFor="let autor of autores" class="card-header">
         <template [ngIf]="{{autor.cedula}} == '{{articulo.autor_ced}}'">
           {{ autor.nombre }} {{ autor.apellido }}
