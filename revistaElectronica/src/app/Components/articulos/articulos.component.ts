@@ -16,11 +16,6 @@ export class ArticulosComponent implements OnInit {
   constructor(private servidor: ServidorService,
               private activatedRoute: ActivatedRoute,) {
     this.obtenerArticulos()
-    /*this.activatedRoute.params.subscribe(params => {
-      this.articulo = this.articulos1[0];
-      this.index = params['id']
-    });
-    this.articulo = this.articulos1 [this.index];*/
   }
 
   ngOnInit(): void {

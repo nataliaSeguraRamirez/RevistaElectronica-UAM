@@ -19,26 +19,21 @@ export class AutenticarGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (
-      (localStorage.getItem('loginEditor') == 'true' &&
-        localStorage.getItem('loginAutor') == 'false') ||
-      localStorage.getItem('loginAutor') == null ||
-      (localStorage.getItem('loginAutor') == 'true' &&
-        localStorage.getItem('loginEdito') == 'false') ||
-      localStorage.getItem('loginAutor') == null
-    ) {
+    if (localStorage.getItem('loginEditor') == 'true') {
       if (
-        (localStorage.getItem('loginEditor') == 'true' &&
-          localStorage.getItem('loginAutor') == 'false') ||
+        localStorage.getItem('loginAutor') == 'false' ||
         localStorage.getItem('loginAutor') == null
       ) {
+        //alert('¡ Editor autenticado !')
         return true
       }
+    }
+    if (localStorage.getItem('loginAutor') == 'true') {
       if (
-        (localStorage.getItem('loginAutor') == 'true' &&
-          localStorage.getItem('loginEdito') == 'false') ||
-        localStorage.getItem('loginAutor') == null
+        localStorage.getItem('loginEditor') == 'false' ||
+        localStorage.getItem('loginEditor') == null
       ) {
+        //alert('¡ Autor autenticado !')
         return true
       }
     }

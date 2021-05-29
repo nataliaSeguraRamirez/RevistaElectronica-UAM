@@ -15,11 +15,11 @@ export class LoginComponent implements OnInit {
     this.servidor.validarIngreso(correo.value, clave.value)
     if (localStorage.getItem('loginEditor') == 'true') {
       alert('¡ Editor autenticado !')
-      this.router.navigateByUrl('/(editor:panel)')
+      this.router.navigateByUrl('/(editor:panel-editor)')
     }
     if (localStorage.getItem('loginAutor') == 'true') {
       alert('¡ Autor autenticado !')
-      //this.router.navigateByUrl('/(autor:panel)')
+      this.router.navigateByUrl('/(autor:panel-autor)')
     }
   }
 }

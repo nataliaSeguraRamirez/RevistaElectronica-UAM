@@ -6,31 +6,42 @@
     <h1>REGISTRO</h1>
     <div class="input-group">
       <span class="input-group-text">Nombre</span>
-      <input type="text" aria-label="nombre" class="form-control" />
+      <input #nombre type="text" aria-label="nombre" class="form-control" />
     </div>
     <br />
     <div class="input-group">
       <span class="input-group-text">Apellido</span>
-      <input type="text" aria-label="apellido" class="form-control" />
-    </div>
-    <br />
-    <div class="input-group">
-      <span class="input-group-text" id="basic-addon1">Correo</span>
-      <input type="text" class="form-control" aria-describedby="basic-addon1" />
-    </div>
-    <br />
-    <div class="input-group">
-      <span class="input-group-text">Contraseña</span>
-      <input type="text" class="form-control" />
+      <input #apellido type="text" aria-label="apellido" class="form-control" />
     </div>
     <br />
     <div class="input-group">
       <span class="input-group-text">Cedula</span>
-      <input type="text" class="form-control" />
+      <input #cedula type="text" class="form-control" />
     </div>
+    <br />
+    <div class="input-group">
+      <span class="input-group-text" id="basic-addon1">Correo</span>
+      <input
+        #correo
+        type="text"
+        class="form-control"
+        aria-describedby="basic-addon1"
+      />
+    </div>
+    <br />
+    <div class="input-group">
+      <span class="input-group-text">Contraseña</span>
+      <input #clave type="text" class="form-control" />
+    </div>
+    <br />
     <div class="button">
-      <button type="submit" class="btn btn-primary" style="margin: 45px;">
-        Ingresar
+      <button
+        type="submit"
+        class="btn btn-primary"
+        style="margin: 45px;"
+        (click)="registrar(nombre, apellido, cedula, correo, clave)"
+      >
+        Registrar
       </button>
     </div>
   </div>

@@ -11,7 +11,7 @@ const routes: Routes = [
     canActivate: [AutenticarGuard],
   },
   {
-    path: 'panel',
+    path: 'panel-editor',
     component: PanelEditorComponent,
     outlet: 'editor',
     canActivate: [AutenticarGuard],

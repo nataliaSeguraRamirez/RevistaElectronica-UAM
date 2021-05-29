@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { usuarios } from './Modelos/usuarios.interface'
 import { articulos } from './Modelos/articulos.interface'
+import { analyzeAndValidateNgModules } from '@angular/compiler'
 
 @Injectable({
   providedIn: 'root',
@@ -22,11 +23,13 @@ export class ServidorService {
           localStorage.setItem('user_cedula', '' + usuario.cedula)
           if (usuario.rol_id == 1) {
             localStorage.setItem('loginEditor', 'true')
+            localStorage.setItem('loginAutor', 'false')
             //alert('Editor autenticado!')
             return true
           }
           if (usuario.rol_id == 2) {
             localStorage.setItem('loginAutor', 'true')
+            localStorage.setItem('loginEditor', 'false')
             //alert('Autor autenticado!')
             return true
           }
@@ -63,5 +66,43 @@ export class ServidorService {
 
   public obtenerAutores() {
     return this.conexion.get<usuarios[]>(this.direccion + '/obtenerAutores')
+  }
+
+  public calificarArticulo(id: any, evaluado: any, publicado: any) {
+    this.conexion
+      .post(this.direccion + '/evaluarArticulo', {
+        _id: id,
+        es_publicado: publicado,
+        es_evaluado: evaluado,
+      })
+      .subscribe((data) => {})
+  }
+
+  public registrarAutor(
+    nombreU: any,
+    apellidoU: any,
+    cedulaU: any,
+    correoU: any,
+    claveU: any,
+  ) {
+    return this.conexion.post(this.direccion + '/registrarAutor', {
+      nombre: nombreU,
+      apellido: apellidoU,
+      cedula: cedulaU,
+      correo: correoU,
+      clave: claveU,
+      rol_id: 2,
+    })
+  }
+
+  public crearArticulo(tituloA: any, descripcionA: any, contenidoA: any) {
+    return this.conexion.post(this.direccion + '/crearArticulo', {
+      titulo: tituloA,
+      descripcion: descripcionA,
+      contenido: contenidoA,
+      es_publicado: 0,
+      es_evaluado: 0,
+      autor_ced: localStorage.getItem('user_cedula'),
+    })
   }
 }

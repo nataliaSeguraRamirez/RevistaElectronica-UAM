@@ -74,5 +74,14 @@ Ejecutar en la carpeta raiz ServidorBackend:
 
 cmd> npm install mongoose
 cmd> npm install express
-
+cmd> npm install mongodb
 cmd> node .\Servidorprueba.js
+
+db.articulos.insert({
+  titulo: 'Articulo Martin',
+  descripcion: 'primer articulo de Martin',
+  contenido: 'Angular is running in development mode. Call enableProdMode() to enable production mode.', 
+  es_publicado: 0,
+  es_evaluado: 0,
+  autor_ced: '8735358'
+});
