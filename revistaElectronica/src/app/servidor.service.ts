@@ -22,12 +22,12 @@ export class ServidorService {
           localStorage.setItem('user_cedula', '' + usuario.cedula)
           if (usuario.rol_id == 1) {
             localStorage.setItem('loginEditor', 'true')
-            alert('Editor autenticado!')
+            //alert('Editor autenticado!')
             return true
           }
           if (usuario.rol_id == 2) {
             localStorage.setItem('loginAutor', 'true')
-            alert('Autor autenticado!')
+            //alert('Autor autenticado!')
             return true
           }
         } else {
