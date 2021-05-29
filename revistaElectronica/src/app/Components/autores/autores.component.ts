@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServidorService } from '../../servidor.service'
-import {usuarios} from '../../Modelos/usuarios'
 import { Router } from '@angular/router';
+import { usuarios } from 'src/app/Modelos/usuarios.interface';
 
 @Component({
   selector: 'app-autores',
@@ -9,13 +9,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./autores.component.css']
 })
 export class AutoresComponent implements OnInit {
-  public usuario: any [] = []
-  constructor(private servidor: ServidorService,
-              private router:Router) { }
+  public autores = [] as usuarios[]
+  constructor(private servidor: ServidorService,private router:Router) {
+    this.obtenerAutores()
+  }
 
   ngOnInit(): void {
 
-    //this.usuario = this.servidor.obtenerAutores();
   }
+  public obtenerAutores() {
+    this.servidor.obtenerAutores().subscribe((data) => {
+      this.autores = data as usuarios[]
+    })
+  }
+
 
 }

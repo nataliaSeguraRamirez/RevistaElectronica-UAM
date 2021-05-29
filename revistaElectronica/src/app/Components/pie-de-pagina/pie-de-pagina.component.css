@@ -4,6 +4,7 @@
   height: 40px;
   text-align: center;
   position: static;
+  margin-top:15px ;
 }
 .background-footer {
   background-color: rgb(194, 194, 194);

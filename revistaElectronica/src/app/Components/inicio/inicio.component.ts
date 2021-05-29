@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
 import { articulos } from 'src/app/Modelos/articulos.interface'
 import { usuarios } from 'src/app/Modelos/usuarios.interface'
 import { ServidorService } from 'src/app/servidor.service'
@@ -11,7 +12,7 @@ import { ServidorService } from 'src/app/servidor.service'
 export class InicioComponent implements OnInit {
   public articulos1 = [] as articulos[]
   public autores = [] as usuarios[]
-  constructor(private servidor: ServidorService) {
+  constructor(private servidor: ServidorService, private router:Router) {
     this.obtenerAutores()
     this.obtenerArticulos()
   }
@@ -28,5 +29,9 @@ export class InicioComponent implements OnInit {
     this.servidor.obtenerArticulosPublicados().subscribe((data) => {
       this.articulos1 = data as articulos[]
     })
+  }
+  verArticulo(index:number){
+    console.log(index)
+    this.router.navigate(['articulos', index]);
   }
 }
