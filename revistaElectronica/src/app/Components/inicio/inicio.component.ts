@@ -30,8 +30,9 @@ export class InicioComponent implements OnInit {
       this.articulos1 = data as articulos[]
     })
   }
-  verArticulo(index: number) {
+  public verArticulo(index: number) {
     console.log(index)
     this.router.navigate([{ outlets: { lector: ['articulos', index] } }])
   }
+  
 }

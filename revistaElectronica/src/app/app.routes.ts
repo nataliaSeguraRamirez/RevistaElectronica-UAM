@@ -16,9 +16,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, outlet: 'lector' },
   { path: 'registro', component: RegistroComponent, outlet: 'lector' },
   {
-    path: ' ',
+    path: '**',
     pathMatch: 'full',
-    redirectTo: '(lector:inicio)',
+    redirectTo: '/(lector:inicio)',
   },
 ]
 

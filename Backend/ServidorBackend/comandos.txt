@@ -74,5 +74,15 @@ Ejecutar en la carpeta raiz ServidorBackend:
 
 cmd> npm install mongoose
 cmd> npm install express
-
+cmd> npm install mongodb
 cmd> node .\Servidorprueba.js
+
+db.articulos.updateOne(
+    { titulo: 'Mi Segundo articulo' },
+    {
+      $set: {
+        es_publicado: 1,
+        es_evaluado: 1,
+      },
+    },
+  );

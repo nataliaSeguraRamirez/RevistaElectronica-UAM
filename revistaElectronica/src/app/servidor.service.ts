@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { usuarios } from './Modelos/usuarios.interface'
 import { articulos } from './Modelos/articulos.interface'
+import { analyzeAndValidateNgModules } from '@angular/compiler'
 
 @Injectable({
   providedIn: 'root',
@@ -63,5 +64,15 @@ export class ServidorService {
 
   public obtenerAutores() {
     return this.conexion.get<usuarios[]>(this.direccion + '/obtenerAutores')
+  }
+
+  public calificarArticulo(id: any, evaluado: any, publicado: any) {
+    this.conexion
+      .post(this.direccion + '/evaluarArticulo', {
+        _id: id,
+        es_publicado: publicado,
+        es_evaluado: evaluado,
+      })
+      .subscribe((data) => {})
   }
 }
