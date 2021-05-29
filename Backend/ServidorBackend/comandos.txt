@@ -77,11 +77,11 @@ cmd> npm install express
 cmd> npm install mongodb
 cmd> node .\Servidorprueba.js
 
-db.usuarios.insert({
-    nombre: 'Martin',
-    apellido: 'Salazar',
-    cedula: '9285901',
-    correo: 'martinsalazar@gmail.com',
-    clave: 'martinclave',
-    rol_id: 2,
-  });
+db.articulos.insert({
+  titulo: 'Articulo Martin',
+  descripcion: 'primer articulo de Martin',
+  contenido: 'Angular is running in development mode. Call enableProdMode() to enable production mode.', 
+  es_publicado: 0,
+  es_evaluado: 0,
+  autor_ced: '8735358'
+});

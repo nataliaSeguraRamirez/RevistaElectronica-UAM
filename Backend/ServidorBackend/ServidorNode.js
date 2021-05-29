@@ -54,3 +54,10 @@ App.post('/registrarAutor', async (req, res, next) => {
   objdocumento.save()
   res.json('true')
 })
+
+App.post('/crearArticulo', async (req, res, next) => {
+  console.log(req.body)
+  const objdocumento = new articulos(req.body)
+  await objdocumento.save()
+  res.json('true')
+})

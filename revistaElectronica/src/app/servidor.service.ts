@@ -94,4 +94,15 @@ export class ServidorService {
       rol_id: 2,
     })
   }
+
+  public crearArticulo(tituloA: any, descripcionA: any, contenidoA: any) {
+    return this.conexion.post(this.direccion + '/crearArticulo', {
+      titulo: tituloA,
+      descripcion: descripcionA,
+      contenido: contenidoA,
+      es_publicado: 0,
+      es_evaluado: 0,
+      autor_ced: localStorage.getItem('user_cedula'),
+    })
+  }
 }
