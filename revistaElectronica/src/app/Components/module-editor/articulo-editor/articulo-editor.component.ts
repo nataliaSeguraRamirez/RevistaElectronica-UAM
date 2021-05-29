@@ -22,7 +22,7 @@ export class ArticuloEditorComponent implements OnInit {
   ngOnInit(): void {}
 
   public obtenerArticulos() {
-    this.servidor.obtenerArticulosPublicados().subscribe((data) => {
+    this.servidor.obtenerArticulosTotal().subscribe((data) => {
       this.articulos1 = data as articulos[]
       this.activatedRoute.params.subscribe((params) => {
         this.articulo = this.articulos1[params['id']]
@@ -32,5 +32,6 @@ export class ArticuloEditorComponent implements OnInit {
   }
   public calificarArticulo(id: any, evaluado: any, publicado: any) {
     this.servidor.calificarArticulo(id, evaluado, publicado)
+
   }
 }
