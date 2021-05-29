@@ -9,6 +9,7 @@ export class LogoutComponent implements OnInit {
   constructor() {
     localStorage.setItem('loginAutor', 'false')
     localStorage.setItem('loginEditor', 'false')
+    localStorage.setItem('user_cedula', '')
   }
 
   ngOnInit(): void {}
