@@ -15,5 +15,5 @@
   Si eres escritor de artículos y deseas que tus obras puedan ser leídas
   publicamente por nuestros usuarios, puedes crear tu cuenta como autor de la
   revista UAM a través del siguiente link:
-  <a routerLink="/registro" routerLinkActive="active">registrarme</a>
+  <a [routerLink]="['/', { outlets: { lector: ['registro'] } }]" routerLinkActive="active">registrarme</a>
 </body>
